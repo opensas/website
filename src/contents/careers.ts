@@ -1,6 +1,30 @@
-import type { Job } from "../types/job.type";
+import type { Career } from "../types/career.type";
 
-export const jobs: Job[] = [
+export const perks = [
+  {
+    title: "😎 6 weeks paid time off",
+  },
+  {
+    title: "🏕 Fully remote & flexible",
+  },
+  {
+    title: "💸 Competitive salary",
+  },
+  {
+    title: "😊 Mental health stipend",
+  },
+  {
+    title: "📚 Educational budget",
+  },
+  {
+    title: "💻 Premium equipment",
+  },
+  {
+    title: "💪 Monthly health stipend",
+  },
+];
+
+export const careers: Career[] = [
   {
     title: "Senior Developer Success Engineer",
     intro: `You are a "jack of all trades, master of some" software engineer, a marketer and a public speaker or accomplished technical writer. We are in the early stages of hiring the team so there's loads of room for you to add your own unique twist, find your passion, help define and execute Gitpod's growth strategies.`,
@@ -23,7 +47,7 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "You will be a great fit if ...",
+        title: "What we need",
         items: [
           "You share our values. We are developer-led and aim for a frictionless experience when interacting with our product, our company and our brand: no hurdles, no BS, no unnecessary extra steps. We are open minded, inclusive, transparent and curious. We always remain students of the game, not masters of the game. We have opinions, but are not opinionated. We integrate, don`t dictate.",
           "You care for our mission. Developers architect our future. Gitpod democratises software development by making it more accessible to all developers.  Ready-to-code, cloud-based development environments streamline how software is written today.",
@@ -41,17 +65,8 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "We care about you",
-        items: [
-          "Work and life",
-          "6 weeks paid time off",
-          "Fully-remote environment & flexible working hours",
-          "Competitive salary and equity package",
-          "Monthly physical health stipend for your local gym, home-gym equipment or Freeletics",
-          "Monthly mental health stipend to support your 🧘‍♀️",
-          "Blinkist, The Atlantic account and other educational budget",
-          "Premium work-from-home equipment (Macbook Pro, standing desk, monitor, webcam, mic)",
-        ],
+        title: "We're about balance",
+        items: perks.map((perk) => perk.title),
       },
     ],
     textAfterTheLists: "",
@@ -75,7 +90,7 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "You will be a great fit if ...",
+        title: "What we need",
         items: [
           "You share our values. We are developer-led and aim for a frictionless experience when interacting with our product, our company and our brand: no hurdles, no BS, no unnecessary extra steps. We are open minded, inclusive, transparent and curious. We always remain students of the game, not masters of the game. We have opinions, but are not opinionated. We integrate, don`t dictate.",
           "You care for our mission. Developers architect our future. Gitpod democratises software development by making it more accessible to all developers.  Ready-to-code, cloud-based development environments streamline how software is written today.",
@@ -93,17 +108,8 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "We care about you",
-        items: [
-          "Work and life",
-          "6 weeks paid time off",
-          "Fully-remote environment & flexible working hours",
-          "Competitive salary and equity package",
-          "Monthly physical health stipend for your local gym, home-gym equipment or Freeletics",
-          "Monthly mental health stipend to support your 🧘‍♀️",
-          "Blinkist, The Atlantic account and other educational budget",
-          "Premium work-from-home equipment (Macbook Pro, standing desk, monitor, webcam, mic)",
-        ],
+        title: "We're about balance",
+        items: perks.map((perk) => perk.title),
       },
     ],
     textAfterTheLists: "",
@@ -127,7 +133,7 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "You will be a great fit if ...",
+        title: "What we need",
         items: [
           "You share our values. We are developer-led and aim for a frictionless experience when interacting with our product, our company and our brand: no hurdles, no BS, no unnecessary extra steps. We are open minded, inclusive, transparent and curious. We always remain students of the game, not masters of the game. We have opinions, but are not opinionated. We integrate, don`t dictate.",
           "You care for our mission. Developers architect our future. Gitpod democratises software development by making it more accessible to all developers.  Ready-to-code, cloud-based development environments streamline how software is written today.",
@@ -146,17 +152,8 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "We care about you",
-        items: [
-          "Work and life",
-          "6 weeks paid time off",
-          "Fully-remote environment & flexible working hours",
-          "Competitive salary and equity package",
-          "Monthly physical health stipend for your local gym, home-gym equipment or Freeletics",
-          "Monthly mental health stipend to support your 🧘‍♀️",
-          "Blinkist, The Atlantic account and other educational budget",
-          "Premium work-from-home equipment (Macbook Pro, standing desk, monitor, webcam, mic)",
-        ],
+        title: "We're about balance",
+        items: perks.map((perk) => perk.title),
       },
     ],
     textAfterTheLists: "",
@@ -180,7 +177,7 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "You will be a great fit if ...",
+        title: "What we need",
         items: [
           "You share our values. We are developer-led and aim for a frictionless experience when interacting with our product, our company and our brand: no hurdles, no BS, no unnecessary extra steps. We are open minded, inclusive, transparent and curious. We always remain students of the game, not masters of the game. We have opinions, but are not opinionated. We integrate, don`t dictate.",
           "You care for our mission. Developers architect our future. Gitpod democratises software development by making it more accessible to all developers.  Ready-to-code, cloud-based development environments streamline how software is written today.",
@@ -199,17 +196,8 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "We care about you",
-        items: [
-          "Work and life",
-          "6 weeks paid time off",
-          "Fully-remote environment & flexible working hours",
-          "Competitive salary and equity package",
-          "Monthly physical health stipend for your local gym, home-gym equipment or Freeletics",
-          "Monthly mental health stipend to support your 🧘‍♀️",
-          "Blinkist, The Atlantic account and other educational budget",
-          "Premium work-from-home equipment (Macbook Pro, standing desk, monitor, webcam, mic)",
-        ],
+        title: "We're about balance",
+        items: perks.map((perk) => perk.title),
       },
     ],
     textAfterTheLists: "",
@@ -232,7 +220,7 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "You will be a great fit if ...",
+        title: "What we need",
         items: [
           "You share our values. We are developer-led and aim for a frictionless experience when interacting with our product, our company and our brand: no hurdles, no BS, no unnecessary extra steps. We are open minded, inclusive, transparent and curious. We always remain students of the game, not masters of the game. We have opinions, but are not opinionated. We integrate, don't dictate.",
           "You care for our mission. Developers architect our future. Gitpod democratises software development by making it more accessible to all developers.  Ready-to-code, cloud-based development environments streamline how software is written today.",
@@ -252,17 +240,8 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "We care about you",
-        items: [
-          "Work and life",
-          "6 weeks paid time off",
-          "Fully-remote environment & flexible working hours",
-          "Competitive salary and equity package",
-          "Monthly physical health stipend for your local gym, home-gym equipment or Freeletics",
-          "Monthly mental health stipend to support your 🧘‍♀️",
-          "Blinkist, The Atlantic account and other educational budget",
-          "Premium work-from-home equipment (Macbook Pro, standing desk, monitor, webcam, mic)",
-        ],
+        title: "We're about balance",
+        items: perks.map((perk) => perk.title),
       },
     ],
     textAfterTheLists: "",
@@ -284,7 +263,7 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "You will be a great fit if ...",
+        title: "What we need",
         items: [
           "You share our values. We are developer-led and aim for a frictionless experience when interacting with our product, our company and our brand: no hurdles, no BS, no unnecessary extra steps. We are open minded, inclusive, transparent and curious. We always remain students of the game, not masters of the game. We have opinions, but are not opinionated. We integrate, don't dictate.",
           "You care for our mission. Developers architect our future. Gitpod democratises software development by making it more accessible to all developers.  Ready-to-code, cloud-based development environments streamline how software is written today.",
@@ -304,17 +283,8 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "We care about you",
-        items: [
-          "Work and life",
-          "6 weeks paid time off",
-          "Fully-remote environment & flexible working hours",
-          "Competitive salary and equity package",
-          "Monthly physical health stipend for your local gym, home-gym equipment or Freeletics",
-          "Monthly mental health stipend to support your 🧘‍♀️",
-          "Blinkist, The Atlantic account and other educational budget",
-          "Premium work-from-home equipment (Macbook Pro, standing desk, monitor, webcam, mic)",
-        ],
+        title: "We're about balance",
+        items: perks.map((perk) => perk.title),
       },
     ],
     textAfterTheLists: "",
@@ -337,7 +307,7 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "You will be a great fit if ...",
+        title: "What we need",
         items: [
           "You share our values. We are developer-led and aim for a frictionless experience when interacting with our product, our company and our brand: no hurdles, no BS, no unnecessary extra steps. We are open minded, inclusive, transparent and curious. We always remain students of the game, not masters of the game. We have opinions, but are not opinionated. We integrate, don't dictate.",
           "You care for our mission. Developers architect our future. Gitpod democratises software development by making it more accessible to all developers.  Ready-to-code, cloud-based development environments streamline how software is written today.",
@@ -357,17 +327,8 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "We care about you",
-        items: [
-          "Work and life",
-          "6 weeks paid time off",
-          "Fully-remote environment & flexible working hours",
-          "Competitive salary and equity package",
-          "Monthly physical health stipend for your local gym, home-gym equipment or Freeletics",
-          "Monthly mental health stipend to support your 🧘‍♀️",
-          "Blinkist, The Atlantic account and other educational budget",
-          "Premium work-from-home equipment (Macbook Pro, standing desk, monitor, webcam, mic)",
-        ],
+        title: "We're about balance",
+        items: perks.map((perk) => perk.title),
       },
     ],
     textAfterTheLists: "",
@@ -391,7 +352,7 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "You will be a great fit if ...",
+        title: "What we need",
         items: [
           "You share our values. We are developer-led and aim for a frictionless experience when interacting with our product, our company and our brand: no hurdles, no BS, no unnecessary extra steps. We are open minded, inclusive, transparent and curious. We always remain students of the game, not masters of the game. We have opinions, but are not opinionated. We integrate, don't dictate.",
           "You care for our mission. Developers architect our future. Gitpod democratises software development by making it more accessible to all developers.  Ready-to-code, cloud-based development environments streamline how software is written today.",
@@ -411,17 +372,8 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "We care about you",
-        items: [
-          "Work and life",
-          "6 weeks paid time off",
-          "Fully-remote environment & flexible working hours",
-          "Competitive salary and equity package",
-          "Monthly physical health stipend for your local gym, home-gym equipment or Freeletics",
-          "Monthly mental health stipend to support your 🧘‍♀️",
-          "Blinkist, The Atlantic account and other educational budget",
-          "Premium work-from-home equipment (Macbook Pro, standing desk, monitor, webcam, mic)",
-        ],
+        title: "We're about balance",
+        items: perks.map((perk) => perk.title),
       },
     ],
     textAfterTheLists: "",
@@ -446,7 +398,7 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "You will be a great fit if ...",
+        title: "What we need",
         items: [
           "You share our values. We are developer-led and aim for a frictionless experience when interacting with our product, our company and our brand: no hurdles, no BS, no unnecessary extra steps. We are open minded, inclusive, transparent and curious. We always remain students of the game, not masters of the game. We have opinions, but are not opinionated. We integrate, don`t dictate.",
           "You love creating meaningful products. Developers architect our future. Gitpod democratises software development by making it more accessible to all developers.  Ready-to-code, cloud-based development environments streamline how software is written today.",
@@ -465,17 +417,8 @@ export const jobs: Job[] = [
         ],
       },
       {
-        title: "We care about you",
-        items: [
-          "Work and life",
-          "6 weeks paid time off",
-          "Fully-remote environment & flexible working hours",
-          "Competitive salary and equity package",
-          "Monthly physical health stipend for your local gym, home-gym equipment or Freeletics",
-          "Monthly mental health stipend to support your 🧘‍♀️",
-          "Blinkist, The Atlantic account and other educational budget",
-          "Premium work-from-home equipment (Macbook Pro, standing desk, monitor, webcam, mic)",
-        ],
+        title: "We're about balance",
+        items: perks.map((perk) => perk.title),
       },
     ],
     textAfterTheLists: "",

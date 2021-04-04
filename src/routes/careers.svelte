@@ -3,47 +3,11 @@
 </script>
 
 <script lang="ts">
+  import CareerModal from "../components/careers/modal.svelte";
   import OpenGraph from "../components/open-graph.svelte";
-  import { jobs } from "../contents/careers";
+  import { careers, perks } from "../contents/careers";
 
-  const values = [
-    {
-      icon: "",
-      iconAlt: "",
-      iconHeight: "",
-      iconWidth: "",
-      title: "Open and transparent",
-      description:
-        "We are open minded, transparent and curious. We remain students of the game, not masters of the game.",
-    },
-    {
-      icon: "",
-      iconAlt: "",
-      iconHeight: "",
-      iconWidth: "",
-      title: "Developer-first",
-      description:
-        "Developers architect our future. We are developers ourselves and built Gitpod to make lives of developers easier.",
-    },
-    {
-      icon: "",
-      iconAlt: "",
-      iconHeight: "",
-      iconWidth: "",
-      title: "Fully remote",
-      description:
-        "You can work from anywhere and schedule your working hours the way it fits best for you. We make sure you are all set and will treat you well.",
-    },
-    {
-      icon: "",
-      iconAlt: "",
-      iconHeight: "",
-      iconWidth: "",
-      title: "Frictionless",
-      description:
-        "Everybody should have a frictionless experience with Gitpod, our product and our comany: no hurdles, no BS, no unnecessary extra steps.",
-    },
-  ];
+  let selectedCareer;
 </script>
 
 <OpenGraph
@@ -54,61 +18,65 @@
   }}
 />
 <header>
-  <h1>Come join our fast-growing, venture-backed team.</h1>
-  <p>Gitpod is built on a culture of trust and empathy.</p>
+  <h1>Always read to code.</h1>
+  <p>Gitpod is a developers first company.</p>
+  <a href="#openings">View {careers.length} openings</a>
 </header>
 
 <div>
-  <!-- TODO: Insert team photo -->
+  <!-- TODO: Insert cube monitor close-up image -->
+</div>
+
+<div>
+  <h2>We want to make software engineering collaborative and joyful again.</h2>
   <p>
-    Come join a quickly growing venture-backed team and work together with
-    incredible humans from 🇦🇺 🇧🇷 🇨🇦 🇫🇷 🇩🇪 🇬🇷 🇵🇰 🇷🇺 🇺🇸 - in an environment with
-    strong values around openness, honesty, and diversity. We are not as diverse
-    as we would like to be. Help us to change that and shape Gitpod’s future
-    from anywhere in the world! 🌈 🌍
+    We are a highly motivated, fully-remote team, organized in a flat hierarchy,
+    and led by technical founders. We love open-source, have started and lead
+    many popular open-source projects, and contribute to many others. In this
+    fashion, we present at international conferences and collaborate openly
+    around the globe.
+  </p>
+  <h2>Gitpod was founded for developers by developers</h2>
+  <p>
+    Everybody should have a frictionless experience with Gitpod, our product and
+    our comany: no hurdles, no BS, no unnecessary extra steps.
+  </p>
+  <p>
+    Developers architect our future. We are developers ourselves and built
+    Gitpod to make lives of developers easier.
   </p>
 </div>
 
 <div>
-  <h2>We’re driven by a set of values</h2>
+  <h2>Perks And Recreation</h2>
   <ul>
-    {#each values as value}
-      <li>
-        <img
-          src={value.icon}
-          alt={value.iconAlt}
-          height={value.iconHeight}
-          width={value.iconWidth}
-        />
-        <p><strong>{value.title}</strong></p>
-        <p>{value.description}</p>
-      </li>
+    {#each perks as { title }}
+      <li>{title}</li>
     {/each}
   </ul>
 </div>
 
 <div>
-  <h2>Current openings</h2>
+  <h2>Open positions</h2>
   <p>
-    We aim to free developers from the friction of manual, stateful, local dev
-    environments. We believe that in a few years working with ephemeral,
-    automated dev environments is going to be as common as using version control
-    or having CI/CD.
+    If there isn't an open position for you but you'd still want to work at
+    Gitpod let us know via <a href="mailto:career@gitpod.io">career@gitpod.io</a
+    >
   </p>
 </div>
 
 <div>
-  {#each jobs as job}
-    <!-- Reuse the accordion from src/components/pricing/faq.svelte -->
-    {job.title}
-  {/each}
+  <ul>
+    {#each careers as career}
+      <li>
+        <button
+          on:click={() => {
+            selectedCareer = career;
+          }}>{career.title}</button
+        >
+      </li>
+    {/each}
+  </ul>
 </div>
 
-<div>
-  <h2>We’re always curious</h2>
-  <p>
-    If no current Job offer fits your qualifications, but you're totally in love
-    with Gitpod and want to help us improving it, please send your application
-    at <strong>career@gitpod.io</strong> anyway. We'd love to hear from you.
-  </p>
-</div>
+<CareerModal career={selectedCareer} on:close={() => (selectedCareer = null)} />
