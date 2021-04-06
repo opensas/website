@@ -5,8 +5,7 @@
   export let career: Career;
 </script>
 
-<Modal isOpen={!!career} on:close>
-  <h2 class="jobTitle">{career.title}</h2>
+<Modal isOpen={!!career} title={career.title} on:close>
   <p>{career.intro}</p>
   <p>{career.paragraphs}</p>
 

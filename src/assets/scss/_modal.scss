@@ -5,6 +5,10 @@
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
+
+  &__header {
+    display: flex;
+  }
 }
 .modal .content {
   background-color: var(--off-white);
@@ -12,19 +16,11 @@
   width: 71rem;
   max-height: 98vh;
   max-width: 98vw;
-  margin: 1vh auto;
-  padding: 3rem;
-  overflow: scroll;
+  margin: 10vh auto;
+  overflow-y: scroll;
 }
-.content button:first-child {
-  float: right;
-  height: 2rem;
-  width: 2rem;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 2rem;
-  &:focus,
-  &:hover {
-    background-color: var(--divider);
-  }
+
+svg {
+  height: 1.5rem;
+  width: 1.5rem;
 }
