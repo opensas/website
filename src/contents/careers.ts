@@ -2,25 +2,32 @@ import type { Career } from "../types/career.type";
 
 export const perks = [
   {
-    title: "😎 6 weeks paid time off",
+    emoji: "😎",
+    title: "6 weeks paid time off",
   },
   {
-    title: "🏕 Fully remote & flexible",
+    emoji: "🏕",
+    title: "Fully remote & flexible",
   },
   {
-    title: "💸 Competitive salary",
+    emoji: "💸",
+    title: "Competitive salary",
   },
   {
-    title: "😊 Mental health stipend",
+    emoji: "😊",
+    title: "Mental health stipend",
   },
   {
-    title: "📚 Educational budget",
+    emoji: "📚",
+    title: "Educational budget",
   },
   {
-    title: "💻 Premium equipment",
+    emoji: "💻",
+    title: "Premium equipment",
   },
   {
-    title: "💪 Monthly health stipend",
+    emoji: "💪",
+    title: "Monthly health stipend",
   },
 ];
 

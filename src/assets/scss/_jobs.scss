@@ -13,19 +13,27 @@
   padding-left: 1.75rem;
 }
 .perks {
+  color: var(--black);
   max-width: 46rem;
   columns: 2 20rem;
-  padding-left: 3rem;
   margin-top: 1rem;
+  padding-left: 1rem;
   column-gap: 1.5rem;
 }
+
 .perks li {
   background-color: var(--off-white);
   border-radius: 0.75rem;
   padding: 10px;
   break-inside: avoid;
   margin: 0 1rem 1rem;
+  font-weight: 600;
 }
+
+.emoji {
+  margin-right: var(--micro);
+}
+
 .jobs {
   margin-top: 2rem;
   padding-left: 2rem;
@@ -40,13 +48,19 @@
   display: block;
   width: 100%;
   text-align: left;
+  border: 1px solid transparent;
+  color: var(--black);
+  font-weight: 600;
+
+  &:hover,
+  &:focus {
+    border: 1px solid #fff;
+  }
 }
 .jobs button::after {
-  content: "";
+  content: url("/arrow.svg");
   float: right;
-  height: 1rem;
-  width: 1rem;
-  border: 2px solid;
-  transform: translatey(0.25rem) rotate(45deg);
-  border-color: currentColor currentColor transparent transparent;
+  height: 1.5rem;
+  width: 1.5rem;
+  transform: rotate(-90deg);
 }
