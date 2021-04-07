@@ -2,10 +2,10 @@
 author: JesterOrNot, svenefftinge
 date: Thu June 18 2020
 excerpt: Until now, you installed VS Code extensions in Gitpod by drag-and-dropping `.vsix` files into your workspace. Today, we're excited to introduce a
-image: open-vsx-blog-post-img.jpg
+image: teaser.jpg
 slug: open-vsx-in-gitpod
 subtitle: Open VSX is now integrated in Gitpod
-teaserImage: open-vsx-blog-post-img.jpg
+teaserImage: teaser.jpg
 title: Search & Install Extensions in Your Gitpod Workspace
 ---
 

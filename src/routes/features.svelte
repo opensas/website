@@ -247,7 +247,7 @@
     vendor-neutral marketplace Open VSX.
   </p>
   <img
-    src="/images/features/gitpod-extensions.png"
+    src="/images/features/gitpod-extensions.jpg"
     alt=""
     role="presentation"
     height="1110"

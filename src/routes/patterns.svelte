@@ -151,16 +151,31 @@
   <section>
     <h2>Buttons</h2>
     <ul class="patterns">
-      <li><a href="/" class="btn">class: btn</a></li>
-      <li><a href="/" class="btn-conversion">btn-conversion</a></li>
-      <li><a href="/" class="btn-primary">btn-primary</a></li>
-      <li><a href="/" class="btn-secondary">btn-secondary</a></li>
-      <li><a href="/" class="btn-tertiary">btn-tertiary</a></li>
-      <li><a href="/" class="btn-quaternary">btn-quaternary</a></li>
+      <li>
+        <button class="btn">class: btn</button>
+      </li>
+      <li>
+        <button class="btn-conversion">btn-conversion</button>
+      </li>
+      <li>
+        <button disabled class="btn-conversion">disabled btn-conversion</button>
+      </li>
+      <li>
+        <button class="btn-primary">btn-primary</button>
+      </li>
+      <li>
+        <button class="btn-secondary">btn-secondary</button>
+      </li>
+      <li>
+        <button class="btn-tertiary">btn-tertiary</button>
+      </li>
+      <li>
+        <button class="btn-quaternary">btn-quaternary</button>
+      </li>
     </ul>
     <h2>One off buttons (don't use)</h2>
     <ul class="patterns">
-      <li><a href="/" class="btn-green">Non-standard: btn-green</a></li>
+      <li><button class="btn-green">Non-standard: btn-green</button></li>
     </ul>
   </section>
 </article>

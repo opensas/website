@@ -5,4 +5,5 @@ export type Pricing = {
   features: string[];
   btnText: string;
   btnHref: string;
+  spiced?: boolean;
 };

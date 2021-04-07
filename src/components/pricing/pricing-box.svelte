@@ -2,7 +2,15 @@
   import type { Pricing } from "../../types/pricing.type";
 
   export let pricing: Pricing;
-  const { title, duration, features, price, btnHref, btnText } = pricing;
+  const {
+    title,
+    duration,
+    features,
+    price,
+    btnHref,
+    btnText,
+    spiced,
+  } = pricing;
 </script>
 
 <style lang="scss">
@@ -14,16 +22,13 @@
     padding: var(--x-small) var(--medium) var(--medium);
     border-radius: 16px;
     box-shadow: var(--shadow);
+    text-align: center;
     transition: all 0.2s;
     margin: 0 var(--micro) var(--x-small);
     width: 295px;
 
     @media (max-width: 1140px) {
       padding: var(--x-small) var(--large) var(--medium);
-    }
-
-    &:hover {
-      box-shadow: var(--shadow-brand);
     }
 
     .h1 {
@@ -62,12 +67,17 @@
     }
   }
 
+  .box:hover,
+  .spiced {
+    box-shadow: var(--shadow-brand);
+  }
+
   .btn-cta {
     align-self: center;
   }
 </style>
 
-<div class="box">
+<div class={`box ${spiced ? "spiced" : ""}`}>
   <div>
     <h2 class="h4">{title}</h2>
     <div class="h1">{price}</div>

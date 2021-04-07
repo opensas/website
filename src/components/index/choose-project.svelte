@@ -33,43 +33,78 @@
     ],
   };
 
-  onMount(() => {
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: [0.7],
-    };
+  /*
+   * In order to trigger the animated text at the right time on both desktop and mobile,
+   * we kick off the animation when the hero element starts to move out of the viewport
+   * and the next section starts to enter the viewport. At that time, the animated Gitpod
+   * benefits text is placed roughly at the center of the browser's viewport.
+   */
+  let isTopHidden = false;
+  let isBottomShown = false;
 
-    const beTouching = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          Object.entries(animatedTexts).forEach(([, texts]) =>
-            texts.forEach((text) => {
-              text.isVisible = false;
-            })
-          );
+  const startAnimation = () => {
+    let t = 0;
+    Object.entries(animatedTexts).forEach(([, texts]) =>
+      texts.forEach((text) => {
+        setTimeout(() => {
+          text.isVisible = true;
           animatedTexts = animatedTexts; // This triggers Svelte's reactivity
-        } else {
-          let t = 0;
-          Object.entries(animatedTexts).forEach(([, texts]) =>
-            texts.forEach((text) => {
-              setTimeout(() => {
-                text.isVisible = true;
-                animatedTexts = animatedTexts; // This triggers Svelte's reactivity
-              }, t);
-              t = t + 400;
-            })
-          );
-        }
+        }, t);
+        t = t + 400;
+      })
+    );
+  };
+
+  const stopAnimation = () => {
+    Object.entries(animatedTexts).forEach(([, texts]) =>
+      texts.forEach((text) => {
+        text.isVisible = false;
+      })
+    );
+    animatedTexts = animatedTexts; // This triggers Svelte's reactivity
+  };
+
+  const manageAnimation = () => {
+    if (isTopHidden && isBottomShown) {
+      startAnimation();
+    } else {
+      stopAnimation();
+    }
+  };
+
+  onMount(() => {
+    const callbackTop = (entries) => {
+      entries.forEach((entry) => {
+        isTopHidden = !entry.isIntersecting;
       });
+      manageAnimation();
     };
 
-    const observer = new IntersectionObserver(beTouching, options);
-    const target = document.querySelector("#choose-project-observer-target");
-    observer.observe(target);
+    const callbackBottom = (entries) => {
+      entries.forEach((entry) => {
+        isBottomShown = entry.isIntersecting;
+      });
+      manageAnimation();
+    };
+
+    const observerTop = new IntersectionObserver(callbackTop, {
+      threshold: [1],
+    });
+    const observerBottom = new IntersectionObserver(callbackBottom, {
+      threshold: [0],
+    });
+    const targetTop = document.querySelector(
+      "#choose-project-observer-target-top"
+    );
+    const targetBottom = document.querySelector(
+      "#choose-project-observer-target-bottom"
+    );
+    observerTop.observe(targetTop);
+    observerBottom.observe(targetBottom);
 
     return () => {
-      observer.disconnect();
+      observerTop.disconnect();
+      observerBottom.disconnect();
     };
   });
 </script>
@@ -140,8 +175,8 @@
     height: 3px;
     margin-top: -0.6em;
     transform-origin: center left;
-    animation: strikethrough 1s 0.5s cubic-bezier(0.55, 0, 0.1, 1) 1 forwards;
-    transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    animation: strikethrough 0.6s 0.4s cubic-bezier(0.55, 0, 0.1, 1) 1 forwards;
+    transition: transform 0.4s cubic-bezier(0.55, 0, 0.1, 1);
   }
 
   @keyframes strikethrough {

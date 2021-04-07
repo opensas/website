@@ -29,6 +29,7 @@ export const pricingPlans: Pricing[] = [
     features: ["All in personal plus", "Unlimited hours", "Teams"],
     btnText: "Buy Now",
     btnHref: "https://gitpod.io/subscription/",
+    spiced: true,
   },
   {
     title: "Unleashed",

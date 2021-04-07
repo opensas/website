@@ -25,6 +25,9 @@
     display: block;
     margin: 0 auto;
     margin-bottom: -48px;
+    margin: 2rem auto;
+    box-shadow: var(--shadow);
+    border-radius: 0.875rem;
 
     @media (max-width: 768px) {
       margin-bottom: -20px;

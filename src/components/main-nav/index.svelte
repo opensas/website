@@ -20,70 +20,18 @@
       label: "Blog",
     },
     {
-      href: "/docs/",
+      href: "/docs",
       label: "Docs",
     },
   ];
 </script>
-
-<style lang="scss">
-  nav {
-    height: var(--header-height);
-    width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 1.25rem var(--x-small);
-    color: var(--black);
-
-    @media (max-width: 768px) {
-      padding: 1.25rem var(--micro);
-    }
-
-    @media (max-width: 375px) {
-      padding: 1.25rem var(--macro);
-    }
-  }
-
-  .wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .items {
-    display: flex;
-    align-items: center;
-
-    :global(a:not(:last-child)) {
-      margin-right: var(--small);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .items {
-      display: none;
-    }
-
-    .login {
-      display: none;
-    }
-  }
-
-  .bg-off-white {
-    background: var(--sand-light);
-
-    @media (max-width: 768px) {
-      background: var(--off-white);
-    }
-  }
-</style>
 
 <nav class={`nav text-small ${$menuState ? "bg-off-white" : ""}`}>
   <div class="wrapper">
     <a href="/" aria-label="Gitpod" on:click={() => ($menuState = !menuState)}>
       <Logo />
     </a>
-    <div class="items">
+    <div class="items w">
       {#each navItems as { href, label }}
         <NavItem {href}>{label}</NavItem>
       {/each}

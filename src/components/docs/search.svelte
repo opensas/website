@@ -27,7 +27,7 @@
 
 <style lang="scss">
   .input-container {
-    @apply w-full mb-12;
+    box-shadow: var(--shadow);
 
     @media (max-width: 768px) {
       @apply mb-4;
@@ -38,10 +38,17 @@
     }
   }
 
+  .input-icon {
+    position: absolute;
+    top: 50%;
+    left: 0.625rem;
+    width: var(--xx-small);
+    height: var(--xx-small);
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
   input {
-    background: url("/svg/mag-glass.svg") 10px center / 24px 24px no-repeat
-      var(--white);
-    box-shadow: var(--shadow);
     height: var(--small);
     font-size: var(--p-medium);
   }
@@ -51,9 +58,14 @@
   }
 
   :global(div
+      .algolia-autocomplete.algolia-autocomplete-left
+      .ds-dropdown-menu),
+  :global(div
       .algolia-autocomplete.algolia-autocomplete-right
       .ds-dropdown-menu) {
     left: 0 !important; /* DocSearch adds inline styles, !important helps us take control */
+    min-width: unset;
+    max-width: unset;
   }
 </style>
 
@@ -68,15 +80,23 @@
     src="https://cdn.jsdelivr.net/npm/docsearch.js@{docSearchJSVersion}/dist/cdn/docsearch.min.js"></script>
 </svelte:head>
 
-<div class={`input-container ${$topicsState ? "topics-active" : ""}`}>
+<div
+  class={`input-container relative bg-white rounded-xl w-full mb-12 ${
+    $topicsState ? "topics-active" : ""
+  }`}
+>
   <label for={docSearchInputSelector} class="sr-only">Search</label>
-  <div class="relative">
-    <input
-      bind:this={docSearchInput}
-      type="search"
-      placeholder="Search"
-      id={docSearchInputSelector}
-      class="box-border block w-full pl-11 pr-3 py-2 border border-transparent rounded-xl leading-5 bg-white text-gray-600 placeholder-gray-500 focus:outline-none focus:bg-white focus:border-white focus:ring-white focus:text-gray-900"
-    />
-  </div>
+  <img
+    class="input-icon"
+    src="/svg/mag-glass.svg"
+    alt="Search"
+    aria-hidden="true"
+  />
+  <input
+    bind:this={docSearchInput}
+    type="search"
+    placeholder="Search"
+    id={docSearchInputSelector}
+    class="box-border block w-full pl-11 pr-3 py-2 border border-transparent leading-5 text-gray-600 placeholder-gray-500 focus:outline-none focus:bg-none focus:border-white focus:ring-white focus:text-gray-900"
+  />
 </div>

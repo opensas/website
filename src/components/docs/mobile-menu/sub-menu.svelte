@@ -96,7 +96,12 @@
       </div>
     </button>
 
-    <nav class={`px-4 ${$subMenuState ? "block" : "hidden"}`} id="sub-menu">
+    <div
+      aria-label={currentSection.title}
+      role="navigation"
+      class={`px-4 ${$subMenuState ? "block" : "hidden"}`}
+      id="sub-menu"
+    >
       <ul>
         {#each currentSection.subMenu as sub}
           <MenuItem href={sub.path} onClick={() => ($subMenuState = false)}>
@@ -104,6 +109,6 @@
           </MenuItem>
         {/each}
       </ul>
-    </nav>
+    </div>
   </div>
 {/if}

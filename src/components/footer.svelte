@@ -19,111 +19,6 @@
   ];
 </script>
 
-<style lang="scss">
-  .footer {
-    padding: var(--large) var(--xx-small);
-
-    @media (min-width: 769px) {
-      max-width: 760px;
-      margin: auto;
-      padding: var(--small) var(--xx-small);
-    }
-
-    &__container {
-      background: var(--off-white);
-    }
-
-    &__entries {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding-bottom: var(--small);
-
-      @media (max-width: 768px) {
-        padding-bottom: var(--micro);
-      }
-
-      li {
-        &:first-child {
-          font-weight: 600;
-          color: var(--black);
-        }
-
-        &:not(:last-child) {
-          margin-bottom: var(--macro);
-        }
-      }
-    }
-
-    &__bottom {
-      display: flex;
-      justify-content: space-between;
-      border-top: var(--border-light);
-      padding-top: var(--x-small);
-
-      @media (max-width: 768px) {
-        padding-top: var(--xx-small);
-      }
-
-      @media (max-width: 300px) {
-        flex-direction: column-reverse;
-        align-items: center;
-      }
-    }
-
-    &__copy {
-      display: flex;
-      align-items: center;
-
-      @media (max-width: 300px) {
-        margin-top: var(--micro);
-      }
-
-      span {
-        margin-left: var(--macro);
-      }
-    }
-
-    &__social {
-      display: flex;
-
-      &-link {
-        &:not(:last-child) {
-          margin-right: var(--micro);
-        }
-      }
-    }
-  }
-
-  ul {
-    @media (max-width: 768px) {
-      margin-bottom: var(--xx-small);
-    }
-
-    @media (max-width: 560px) {
-      flex: 0 0 34%;
-    }
-  }
-
-  .logo-wrapper {
-    transform: translateY(-1px);
-  }
-
-  sup {
-    color: var(--brand-ripe);
-  }
-
-  a {
-    color: var(--dark-grey);
-    text-decoration-color: var(--brand-ripe);
-
-    &:hover,
-    &:focus {
-      color: var(--black);
-    }
-  }
-</style>
-
 <div class="footer__container">
   <footer class="footer fine-print">
     <div class="footer__entries">
@@ -151,11 +46,7 @@
           >
         </li>
         <li>
-          <a
-            href="https://github.com/gitpod-io/gitpod/issues/new?template=bug_report.md"
-            target="_blank"
-            >Community
-          </a>
+          <a href="https://community.gitpod.io" target="_blank">Community </a>
         </li>
       </ul>
       <!-- <div style="flex: 0 0 100%">

@@ -43,7 +43,7 @@
     }
 
     &__intro-text {
-      margin-top: var(--micro);
+      margin-top: -16px;
 
       @media (max-width: 972px) {
         font-size: var(--p-medium);
@@ -59,10 +59,10 @@
 
       & > * {
         display: grid;
-        grid-template-columns: 32% 2fr;
+        grid-template-columns: 160px 100%;
         gap: var(--xx-small);
 
-        @media (max-width: 972px) {
+        @media (max-width: 1140px) {
           display: flex;
           gap: initial;
 
@@ -122,10 +122,13 @@
 
     &__illustration {
       max-width: 700px;
+      padding-left: 70px;
+      padding-top: 20px;
       flex: 1;
 
-      @media (max-width: 642px) {
+      @media (max-width: 972px) {
         margin-top: var(--micro);
+        padding: 0;
       }
     }
   }
@@ -133,7 +136,9 @@
 
 <div class="hero">
   <div class="hero__text">
-    <h1 class="homeh1">Always<br /> Ready to Code.</h1>
+    <h1 id="choose-project-observer-target-top" class="homeh1">
+      Always<br /> Ready to Code.
+    </h1>
     <p id="choose-project-observer-target" class="hero__intro-text text-large">
       Spin up fresh, automated dev environments<br />
       for each task, in the cloud, in seconds.
@@ -151,14 +156,14 @@
       </div>
       <div>
         <div class="hero__icons">
+          <img src="/svg/gitlab.svg" alt="GitLab logo" width="30" height="30" />
+          <img src="/svg/github.svg" alt="GitHub logo" width="30" height="30" />
           <img
             src="/svg/bitbucket.svg"
             alt="Bitbucket logo"
             width="30"
             height="30"
           />
-          <img src="/svg/github.svg" alt="GitHub logo" width="30" height="30" />
-          <img src="/svg/gitlab.svg" alt="GitLab logo" width="30" height="30" />
         </div>
         <div class="hero__stars">
           <a

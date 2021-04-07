@@ -61,11 +61,10 @@
   }}
 />
 <header>
-  <h1>To remove all friction from the developer experience.</h1>
-  <p>Bring back joy and speed to dev workflows.</p>
+  <h1>Always ready to code.</h1>
+  <p>Gitpod is a developers first company.</p>
   <p>
-    <a href="#openings" class="btn-conversion">View {careers.length} openings</a
-    >
+    <a href="#jobs" class="btn-conversion">View {careers.length} openings</a>
   </p>
 </header>
 
@@ -152,7 +151,7 @@
   </ul>
 
   <div class="openings">
-    <h2 id="openings" class="h4">Open positions</h2>
+    <h2 id="jobs" class="h4">Open positions</h2>
     <p>
       If there isn't an open position for you but you'd still want to work at
       Gitpod let us know via <a href="mailto:career@gitpod.io"
@@ -163,9 +162,8 @@
     <div>
       <ul class="jobs">
         {#each careers as career}
-          <li>
+          <li id={career.title.toLowerCase().replace(/\s/g, "-")}>
             <button
-              class="text-medium"
               on:click={() => {
                 selectedCareer = career;
               }}>{career.title}</button

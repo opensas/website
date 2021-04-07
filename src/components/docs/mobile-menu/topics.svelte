@@ -8,7 +8,7 @@
   export let MENU;
 </script>
 
-<nav>
+<div role="navigation" aria-label="All topics">
   <ul>
     {#each MENU as menuItem}
       <MenuItem
@@ -20,4 +20,4 @@
       </MenuItem>
     {/each}
   </ul>
-</nav>
+</div>

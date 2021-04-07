@@ -5,7 +5,11 @@
   export let menuItem;
 
   $: isActiveSection = $docsCurrentSectionStore
-    ? menuItem.path.indexOf($docsCurrentSectionStore) >= 0
+    ? menuItem.path.indexOf(
+        /self-hosted\/\d\.\d\.\d/.test($docsCurrentSectionStore)
+          ? $docsCurrentSectionStore.replace(/\d\.\d\.\d/, "latest")
+          : $docsCurrentSectionStore
+      ) >= 0
     : /\/docs\/$/.test(menuItem.path);
 </script>
 

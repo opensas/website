@@ -17,7 +17,7 @@
 {#if showCookieConsent}
   <div
     out:fade
-    class="fixed bottom-0 px-4 py-3 flex justify-between items-center w-full bg-orange-700 shadow-sm text-xs sm:text-sm md:text-base"
+    class="fixed bottom-0 px-4 py-2 flex justify-between items-center w-full bg-sand-dark shadow-sm text-xs sm:text-sm md:text-base"
   >
     <p class="w-7/12 md:w-9/12">
       This website uses cookies to enhance the user experience. Read our <a
@@ -26,7 +26,8 @@
     </p>
     <button
       on:click={acceptCookies}
-      class="px-3 py-2 bg-off-white rounded-2xl md:px-6">Accept Cookies</button
+      class="px-3 py-1 bg-off-white rounded-lg md:px-6 hover:bg-white"
+      >Accept Cookies</button
     >
   </div>
 {/if}

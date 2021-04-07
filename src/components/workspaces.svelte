@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
-  import { elasticOut, linear } from "svelte/easing";
+  import { cubicIn, cubicOut, linear } from "svelte/easing";
   import Workspace_1 from "./svgs/workspace-1.svelte";
   import Workspace_2 from "./svgs/workspace-2.svelte";
   import Workspace_3 from "./svgs/workspace-3.svelte";
@@ -32,7 +32,7 @@
     return {
       delay: params.delay || 0,
       duration: params.duration || 400,
-      easing: params.easing || elasticOut,
+      easing: params.easing || linear,
       css: (t, u) =>
         `opacity: ${t}; transform: ${existingTransform} scale(${
           1 + ((params.factor || 1.5) - 1) * u
@@ -100,8 +100,8 @@
         class="item"
         style="top: {100 * (top / wrapper_height)}%; left: {100 *
           (left / wrapper_width)}%; width: {100 * (width / wrapper_width)}%;"
-        in:fade={{ duration: 1500, easing: linear }}
-        out:zoom|local={{ duration: 1500, factor: 1.075, easing: linear }}
+        in:fade={{ duration: 1500, easing: cubicIn }}
+        out:zoom|local={{ duration: 1500, factor: 1.075, easing: cubicOut }}
         on:outroend={shuffle}
       >
         <svelte:component this={Component} />

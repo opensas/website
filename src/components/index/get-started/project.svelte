@@ -22,6 +22,7 @@
     }
 
     &__logo {
+      height: 2.25rem;
       width: 2.25rem;
       margin-right: var(--micro);
       filter: grayscale(100%) opacity(0.5);

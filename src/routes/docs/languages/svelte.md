@@ -53,9 +53,13 @@ In order to make live reload work we need to add a bit of configuration as speci
 
 ## Example Projects
 
+<div class="table-container">
+
 | Repository                                                          | Description                        | Try it                                                                                                                              |
 | ------------------------------------------------------------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | [SvelteJS template](https://github.com/gitpod-io/sveltejs-template) | A project template for Svelte apps | [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/gitpod-io/sveltejs-template) |
+
+</div>
 
 ## VSCode Extensions
 

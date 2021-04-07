@@ -11,7 +11,11 @@
 
   $: currentSection = MENU.find(({ path }) =>
     $docsCurrentSectionStore
-      ? path.indexOf($docsCurrentSectionStore) >= 0
+      ? path.indexOf(
+          /self-hosted\/\d\.\d\.\d/.test($docsCurrentSectionStore)
+            ? $docsCurrentSectionStore.replace(/\d\.\d\.\d/, "latest")
+            : $docsCurrentSectionStore
+        ) >= 0
       : /\/docs\/$/.test(path)
   );
 </script>

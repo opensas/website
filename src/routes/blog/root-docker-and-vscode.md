@@ -2,10 +2,10 @@
 author: svenefftinge
 date: Thu Dec 07 2020 11:49:24 GMT+0000 (UTC)
 excerpt: The team has been focussing on shipping some major new features, which mark important milestones on our goal to eliminate all friction
-image: santa.jpg
+image: teaser.jpg
 slug: root-docker-and-vscode
 subtitle: New Release
-teaserImage: santa.jpg
+teaserImage: teaser.jpg
 title: Root, Docker and VS Code
 ---
 

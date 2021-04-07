@@ -22,6 +22,8 @@
         ><img
           src="https://github.com/{authors[username].socialProfiles.github}.png"
           alt="Avatar of {authors[username].name}"
+          height="24"
+          width="24"
         />
         {#if !showIconOnly}
           {authors[username].name}

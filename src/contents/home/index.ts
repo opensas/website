@@ -91,6 +91,12 @@ export const brands: Brand[] = [
 
 export const projects: Project[] = [
   {
+    logo: "svg/projects/svelte.svg",
+    title: "SvelteKit",
+    githubUrl: "https://github.com/gitpod-io/sveltekit-example",
+    alt: "SvelteKit",
+  },
+  {
     logo: "svg/projects/ts.svg",
     title: "TypeScript",
     githubUrl: "https://github.com/eclipse-theia/theia",

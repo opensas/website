@@ -9,7 +9,7 @@
     text-align: center;
   }
 
-  .wrapper {
+  .cards-container {
     display: flex;
     justify-content: space-between;
 
@@ -39,7 +39,7 @@
 
 <Section id="get-started">
   <h1>Get started now</h1>
-  <div class="wrapper">
+  <div class="cards-container">
     <div class="card">
       <LinkGitRepository />
     </div>

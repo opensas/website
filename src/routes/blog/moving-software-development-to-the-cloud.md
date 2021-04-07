@@ -2,10 +2,10 @@
 author: svenefftinge, JohannesLandgraf, csweichel
 date: Tue Dec 09 2020 8:00:00 GMT+0000 (UTC)
 excerpt: As described earlier this year, Microsoft's investment into GitHub Codespaces is helping to move more into the mainstream what Gitpod has
-image: octocat-gitpod-hat.jpg
+image: teaser.jpg
 slug: moving-software-development-to-the-cloud
 subtitle: Gitpod & GitHub Codespaces
-teaserImage: octocat-gitpod-hat.jpg
+teaserImage: teaser.jpg
 title: Moving software development to the cloud ☁️
 ---
 

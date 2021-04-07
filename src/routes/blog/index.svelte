@@ -13,6 +13,18 @@
   export let posts: BlogPost[];
 </script>
 
+<style>
+  header,
+  section {
+    margin-top: var(--xx-large);
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: var(--small);
+  }
+</style>
+
 <OpenGraph
   data={{
     description:
@@ -21,11 +33,20 @@
     type: "website",
   }}
 />
-<header>
-  <h1>From the team at Gitpod</h1>
-</header>
+<section>
+  <h1>Blog</h1>
+</section>
 <div class="posts">
-  {#each posts as post}
+  {#each posts.slice(0, 6) as post}
+    <PostPreview {post} isMostRecent />
+  {/each}
+</div>
+
+<section>
+  <h2>Previous posts</h2>
+</section>
+<div class="posts previous">
+  {#each posts.slice(6) as post}
     <PostPreview {post} />
   {/each}
 </div>
