@@ -136,7 +136,7 @@
 
 <div class="hero">
   <div class="hero__text">
-    <h1 id="choose-project-observer-target-top" class="homeh1">
+    <h1 class="homeh1">
       Always<br /> Ready to Code.
     </h1>
     <p id="choose-project-observer-target" class="hero__intro-text text-large">

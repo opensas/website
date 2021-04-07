@@ -23,10 +23,17 @@
       href: "/docs",
       label: "Docs",
     },
+    {
+      href: "/careers",
+      label: "We're hiring",
+    },
   ];
 </script>
 
-<nav class={`nav text-small ${$menuState ? "bg-off-white" : ""}`}>
+<nav
+  id="choose-project-observer-target-top"
+  class={`nav text-small ${$menuState ? "bg-off-white" : ""}`}
+>
   <div class="wrapper">
     <a href="/" aria-label="Gitpod" on:click={() => ($menuState = !menuState)}>
       <Logo />

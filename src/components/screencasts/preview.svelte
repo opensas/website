@@ -61,16 +61,20 @@
   div a div {
     flex: 0;
   }
+
+  a :global(svg) {
+    width: 5.1rem;
+  }
 </style>
 
 <a href="/screencasts/{screencast.title.toLowerCase().replace(/\s/g, '-')}">
-  <!-- TODO: add correct image path -->
-  <div style="background-image: url({screencast.tile})">
+  <div
+    style="background-image: url(/images/screencasts/preview.jpg)"
+    class="bg-no-repeat bg-auto text-left"
+  >
     <data>Screencast {screencastNumberPadded}</data>
     <h2 class="text-large">{screencast.title}</h2>
     <!-- TODO: move css out of logo so we can change teh size -->
     <Logo />
-
-    <!-- Preview image. TODO: What do we want to show here? -->
   </div>
 </a>

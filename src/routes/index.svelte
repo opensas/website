@@ -19,7 +19,7 @@
   data={{
     description:
       "Gitpod streamlines developer workflows by providing prebuilt, collaborative development environments in your browser - powered by VS Code.",
-    title: "Gitpod - Dev environments built for the cloud",
+    title: "Gitpod - Always ready to code",
     type: "website",
   }}
 />

@@ -51,13 +51,12 @@ textarea {
   content: "";
   border: 1px solid var(--divider);
   height: 2rem;
-  width: 2rem;
+  width: 2.5rem;
   padding: 0.25rem;
-  border-radius: 0.5em;
+  border-radius: 4px;
   font-size: 24px;
   line-height: 1.1;
   text-align: center;
-  content: "✓";
   color: transparent;
 }
 .error,
@@ -69,9 +68,13 @@ textarea {
 .error.error [type] + label {
   color: var(--dark-grey);
 }
-[type="checkbox"]:checked + label::before {
-  background-image: var(--brand-gradient);
+[type="checkbox"]:checked + label::before,
+[type="checkbox"]:checked + label:hover::before,
+[type="checkbox"]:checked + label:focus::before {
+  content: "✔";
   color: var(--black);
+  border: 1px solid #ffb45b;
+  background: #ffb45b;
 }
 [type="checkbox"] + label:hover::before,
 [type="checkbox"] + label:focus::before {
@@ -79,12 +82,12 @@ textarea {
 }
 [type="radio"]:hover + label,
 [type="radio"]:focus + label {
-  border-color: currentColor;
+  border-color: var(--dark-grey);
 }
 [type="radio"]:checked + label {
-  background-image: var(--brand-gradient);
-  text-shadow: 0 0 1px currentColor;
   color: var(--black);
+  border: 1px solid #ffb45b;
+  background: #ffb45b;
 }
 .btn-conversion:disabled {
   background-color: var(--sand-dark);

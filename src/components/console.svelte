@@ -72,7 +72,7 @@
 
       c.scale(dpr, dpr);
 
-      if (window.innerWidth < 768) {
+      if (width < 500) {
         font_size = 12;
         line_height = 19;
 
@@ -338,6 +338,9 @@
 <style>
   .aspect {
     position: relative;
+    height: 100%;
+    max-height: 500px;
+    min-height: 300px;
   }
   .aspect::before {
     content: "";
@@ -370,7 +373,8 @@
     background: rgba(18, 16, 12, 0.7);
   }
   .wrapper.shadow {
-    box-shadow: 0px 11px 39px #ffca64, 0px 17px 49px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.08),
+      0px 5px 20px rgba(0, 0, 0, 0.12);
   }
   .titlebar {
     z-index: 1;

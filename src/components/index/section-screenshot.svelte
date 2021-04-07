@@ -26,7 +26,7 @@
     margin: 0 auto;
     margin-bottom: -48px;
     margin: 2rem auto;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-brand);
     border-radius: 0.875rem;
 
     @media (max-width: 768px) {

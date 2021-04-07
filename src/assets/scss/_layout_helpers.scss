@@ -125,6 +125,7 @@ main > header {
   text-align: center;
 
   @media (max-width: 768px) {
+    flex: 0 1 calc(100% - 2rem);
     min-width: 280px;
   }
 }

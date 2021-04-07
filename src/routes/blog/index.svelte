@@ -23,30 +23,40 @@
   h2 {
     margin-bottom: var(--small);
   }
+
+  .blog-layout {
+    @apply pb-10;
+  }
 </style>
 
-<OpenGraph
-  data={{
-    description:
-      "Visit the Gitpod blog to learn about releases, tutorials, news and more.",
-    title: "Blog",
-    type: "website",
-  }}
-/>
-<section>
-  <h1>Blog</h1>
-</section>
-<div class="posts">
-  {#each posts.slice(0, 6) as post}
-    <PostPreview {post} isMostRecent />
-  {/each}
-</div>
+<div class="blog-layout">
+  <OpenGraph
+    data={{
+      description:
+        "Visit the Gitpod blog to learn about releases, tutorials, news and more.",
+      title: "Blog",
+      type: "website",
+    }}
+  />
+  <section>
+    <h1>Blog</h1>
+  </section>
+  <div class="posts-grid">
+    {#each posts.slice(0, 6) as post}
+      <div class="posts-grid__item">
+        <PostPreview {post} isMostRecent />
+      </div>
+    {/each}
+  </div>
 
-<section>
-  <h2>Previous posts</h2>
-</section>
-<div class="posts previous">
-  {#each posts.slice(6) as post}
-    <PostPreview {post} />
-  {/each}
+  <section>
+    <h2>Previous posts</h2>
+  </section>
+  <div class="posts-grid previous">
+    {#each posts.slice(6) as post}
+      <div class="posts-grid__item">
+        <PostPreview {post} />
+      </div>
+    {/each}
+  </div>
 </div>

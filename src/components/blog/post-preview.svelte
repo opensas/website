@@ -25,8 +25,8 @@
     </h2>
     <p class="excerpt">{post.excerpt}</p>
     <p>
-      <span
-        ><Author author={post.author} showIconOnly />
+      <span>
+        <Author author={post.author} showIconOnly />
         <a href="/blog/{post.slug}" class="date" sveltekit:prefetch>
           {new Date(Date.parse(post.date)).toLocaleDateString(undefined, {
             year: "numeric",

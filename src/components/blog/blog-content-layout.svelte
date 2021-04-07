@@ -1,5 +1,6 @@
 <script lang="ts">
   import Author from "./author.svelte";
+  import RecentArticlesPreview from "./recent-articles-preview.svelte";
   import OpenGraph from "../../components/open-graph.svelte";
   import { authors } from "../../contents/blog";
 
@@ -77,3 +78,5 @@
     </ul>
   </section>
 </div>
+
+<RecentArticlesPreview />

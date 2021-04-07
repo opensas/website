@@ -16,9 +16,9 @@
       description:
         "If you are looking for help for common requests pease visit our community.",
       title: "Ask the community",
-      image: "contact-1.png",
-      imgHeight: "130",
-      imgWidth: "142",
+      image: "icon-enter.svg",
+      imgHeight: "154",
+      imgWidth: "147",
     },
     {
       btnHref: "/docs",
@@ -26,9 +26,9 @@
       description:
         "If you want to find out if you are elegible for our professional open source programm you can check out our docs.",
       title: "Professional Open Source",
-      image: "contact-2.png",
-      imgHeight: "130",
-      imgWidth: "142",
+      image: "icon-cube.svg",
+      imgHeight: "154",
+      imgWidth: "147",
     },
   ];
 
@@ -108,6 +108,9 @@
 </script>
 
 <style>
+  p {
+    color: var(--dark-grey);
+  }
   form {
     max-width: 45rem;
     margin: auto;
@@ -135,14 +138,15 @@
   </p>
 </header>
 
-<div class="cards double">
+<div class="cards double mx-8">
   {#each contactCards as contactCard}
     <Card {contactCard} />
   {/each}
 </div>
 
-<section class="card">
+<section class="card shadow-xl mb-32 mx-8">
   <form on:submit|preventDefault={handleSubmit} novalidate>
+    <h3 class="text-center mb-8">Send us a message</h3>
     <ul>
       <li class:error={isFormDirty && !formData.name.valid}>
         <label for="name">Name*</label>
@@ -191,7 +195,9 @@
                   value={subject}
                   name="subject"
                 />
-                <label for="subject-{index}">{subject}</label>
+                <label for="subject-{index}" class="font-medium"
+                  >{subject}</label
+                >
               </li>
             {/each}
           </ul>
@@ -228,10 +234,8 @@
         >
       </li>
       <li>
-        <button
-          type="submit"
-          class="btn-conversion"
-          disabled={isFormDirty && !isFormValid}>Send message</button
+        <button type="submit" class="btn" disabled={isFormDirty && !isFormValid}
+          >Send message</button
         >
       </li>
     </ul>

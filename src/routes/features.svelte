@@ -73,15 +73,6 @@
   .halfimages .text-large {
     margin: var(--x-small) 0;
   }
-
-  .halfimages .prebuilds-p {
-    margin-bottom: var(--x-large);
-
-    @media (max-width: 768px) {
-      margin-bottom: var(--x-small);
-    }
-  }
-
   .double .h4 {
     margin-bottom: var(--micro);
   }
@@ -120,14 +111,11 @@
 
 <Header />
 
-<section class="halfimages">
-  <article>
-    <div>
-      <Console source={terminalSource} />
-    </div>
-    <div>
+<section class="">
+  <div class="flex md:flex-row flex-col-reverse md:space-x-32 mx-8">
+    <div class="lg:w-1/2 lg:pt-8 xl:pt-16">
       <h2 class="h4">Save Time with Prebuilds</h2>
-      <p class="text-large prebuilds-p">
+      <p class="text-large mt-8 mb-16">
         Gitpod continuously builds your git branches like a CI server. This
         means no more waiting for dependencies to be downloaded and builds to
         finish.
@@ -138,37 +126,42 @@
         >
       </p>
     </div>
-  </article>
+    <div class="lg:w-1/2 w-full mb-16">
+      <Console source={terminalSource} />
+    </div>
+  </div>
 
-  <article>
-    <div>
+  <div class="flex md:flex-row flex-col md:space-x-32 my-32 mx-8">
+    <div class="lg:w-1/2 w-full h-full">
       <Workspaces />
     </div>
-    <div>
+    <div class="lg:w-1/2">
       <h2 class="h4">Start Fresh with Ephemeral Dev Environments</h2>
-      <p class="text-large">
+      <p class="text-large mt-8 mb-16">
         Dev environment as code assures you are always starting from a clean
         state and never gets dragged into long-living stateful environments. The
         end of all works-on-my-machine situations.
       </p>
-      <p style="text-align: center">
+      <p>
         <a href="/blog/dev-env-as-code/" class="btn-secondary">
           More about Dev-Environments-as-Code</a
         >
       </p>
     </div>
-  </article>
+  </div>
 </section>
 
 <section class="cards double">
   <div class="card">
-    <img
-      src="/images/features/features-3.svg"
-      alt=""
-      role="presentation"
-      height="223"
-      width="382"
-    />
+    <div class="h-72 pb-4">
+      <img
+        src="/images/features/features-3.svg"
+        alt=""
+        role="presentation"
+        height="223"
+        width="382"
+      />
+    </div>
     <h2 class="h4">Collaboration with Workspace Sharing</h2>
     <p class="text-large">
       Collaborate with your friends, co-workers, and clients. Whenever you want
@@ -179,7 +172,14 @@
     <a href="/docs/sharing-and-collaboration/"> More about collaboration. </a>
   </div>
   <div class="card">
-    <Console source={terminalSource} dark={true} shadow={false} narrow={true} />
+    <div class="h-72 pb-6">
+      <Console
+        source={terminalSource}
+        dark={true}
+        shadow={false}
+        narrow={true}
+      />
+    </div>
     <h2 class="h4">Full linux machine <span>(incl sudo/docker)</span></h2>
     <p class="text-large">
       Instantly start a container in the cloud based on your Docker image.

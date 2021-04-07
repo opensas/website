@@ -13,7 +13,7 @@
 
 <header>
   <h1 class="h2">Features</h1>
-  <p class="text-large">
+  <p class="text-large mt-4">
     Automated workspaces that supercharge your dev workflow. Squash the time
     between code-to-commit.
   </p>
