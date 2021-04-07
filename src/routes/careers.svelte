@@ -62,6 +62,7 @@
     }
   }
 
+  .offerings,
   .openings {
     margin: var(--xx-large) 0;
 
