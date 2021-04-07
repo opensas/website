@@ -21,7 +21,7 @@
   }
 
   header {
-    margin-bottom: var(--x-small);
+    margin-bottom: var(--x-large);
     h1 {
       margin-bottom: var(--micro);
     }
