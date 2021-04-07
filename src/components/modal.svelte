@@ -17,6 +17,12 @@
   };
 </script>
 
+<style>
+  h2 {
+    margin: 0;
+  }
+</style>
+
 <svelte:window on:keydown={handleKeydown} />
 
 {#if isOpen}
@@ -24,6 +30,7 @@
     <!-- TODO: Insert backdrop -->
     <div class="content text-blob">
       <div class="modal-header">
+        <h2>{title}</h2>
         <button aria-label="close this popup" on:click={closeModal}>
           <svg
             class="close"
@@ -39,9 +46,10 @@
             /></svg
           >
         </button>
-        <h2>{title}</h2>
       </div>
-      <slot />
+      <div class="body">
+        <slot />
+      </div>
     </div>
   </div>
 {/if}

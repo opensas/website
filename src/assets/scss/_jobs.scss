@@ -5,8 +5,10 @@
   list-style: none;
 }
 .hilited {
-  max-width: 50rem;
-  margin: auto;
+  @media (min-width: 910px) {
+    max-width: 50rem;
+    margin: auto;
+  }
 }
 .hilited h2 {
   border-left: 0.25rem solid var(--brand-ripe);
@@ -17,8 +19,10 @@
   max-width: 46rem;
   columns: 2 20rem;
   margin-top: 1rem;
-  padding-left: 1rem;
   column-gap: 1.5rem;
+  @media (min-width: 900px) {
+    padding-left: 1rem;
+  }
 }
 
 .perks li {
@@ -28,6 +32,11 @@
   break-inside: avoid;
   margin: 0 1rem 1rem;
   font-weight: 600;
+
+  @media (max-width: 375px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .emoji {
@@ -36,7 +45,6 @@
 
 .jobs {
   margin-top: 2rem;
-  padding-left: 2rem;
 }
 .jobs li {
   margin: 1rem 0;
@@ -52,6 +60,16 @@
   color: var(--black);
   font-weight: 600;
 
+  @media (max-width: 500px) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0.5rem 1rem;
+  }
+
   &:hover,
   &:focus {
     border: 1px solid #fff;
@@ -63,4 +81,8 @@
   height: 1.5rem;
   width: 1.5rem;
   transform: rotate(-90deg);
+
+  @media (max-width: 500px) {
+    flex: 0 0 1.5rem;
+  }
 }

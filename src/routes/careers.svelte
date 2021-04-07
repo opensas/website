@@ -28,9 +28,11 @@
   }
 
   section {
-    width: 50rem;
-    max-width: 96vw;
-    margin: auto;
+    @media (min-width: 900px) {
+      width: 50rem;
+      max-width: 96vw;
+      margin: auto;
+    }
   }
 
   section h2 {
@@ -40,6 +42,18 @@
   section p,
   section h2 {
     padding-left: 2rem;
+
+    @media (max-width: 900px) {
+      padding-left: 1rem;
+    }
+  }
+
+  @media (max-width: 375px) {
+    section p,
+    .offerings h2,
+    .openings h2 {
+      padding-left: 0;
+    }
   }
 
   article {
@@ -50,6 +64,10 @@
 
   .openings {
     margin: var(--xx-large) 0;
+
+    @media (max-width: 972px) {
+      margin: var(--x-large) 0;
+    }
   }
 </style>
 
@@ -143,12 +161,14 @@
     </p>
   </article>
 
-  <h2 class="h4">What we offer</h2>
-  <ul class="perks">
-    {#each perks as { title, emoji }}
-      <li class="text-medium"><span class="emoji">{emoji}</span>{title}</li>
-    {/each}
-  </ul>
+  <div class="offerings">
+    <h2 class="h4">What we offer</h2>
+    <ul class="perks">
+      {#each perks as { title, emoji }}
+        <li class="text-medium"><span class="emoji">{emoji}</span>{title}</li>
+      {/each}
+    </ul>
+  </div>
 
   <div class="openings">
     <h2 id="jobs" class="h4">Open positions</h2>

@@ -9,6 +9,12 @@
 
 .modal-header {
   display: flex;
+  justify-content: space-between;
+  padding: var(--medium);
+}
+
+.body {
+  padding: 0 var(--x-large) var(--x-large);
 }
 
 .close {
