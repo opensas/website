@@ -12,7 +12,7 @@
 
 <style>
   .heroImage {
-    margin: 0 autho 2rem auto;
+    margin: 0 auto 2rem auto;
     border-radius: 1rem;
   }
   section {
