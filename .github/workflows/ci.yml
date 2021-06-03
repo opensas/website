@@ -1,13 +1,20 @@
 name: CI
 on: [push]
 jobs:
-  lighthouseci:
+  test_lighthouse:
+    name: Lighthouse Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-        node-version: '14'
-      - run: npm install && npm install -g @lhci/cli@0.7.x
-      - run: npm run build
-      - run: lhci autorun
+          node-version: "14"
+      - name: Audit Netlify preview URL using Lighthouse
+        uses: jakepartusch/wait-for-netlify-action@v1.2
+        id: waitFor200
+        with:
+          site_name: "gitpod-kumquat"
+      - name: Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.7.x
+          lhci autorun --upload.target=temporary-public-storage --collect.url=${{ steps.waitFor200.outputs.url }} || echo "LHCI failed!"
