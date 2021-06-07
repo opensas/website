@@ -45,7 +45,13 @@ module.exports = {
       },
       remarkPlugins: [
         slug,
-        headings,
+        [
+          headings,
+          {
+            behavior: "append",
+            linkProperties: {},
+          },
+        ],
         remarkSetImagePath,
         [
           remarkEmbedVideo,
