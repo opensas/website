@@ -3,6 +3,7 @@
   import MobileMenu from "../../components/docs/mobile-menu/index.svelte";
   import Search from "../../components/docs/search.svelte";
   import "../../assets/docs.scss";
+  import "../../assets/markdown-commons.scss";
 
   // This file is used to define entries in the side menu
   interface MenuEntry {
@@ -22,11 +23,11 @@
   const MENU: MenuEntry[] = [
     M("Introduction", ""),
     M("Quickstart", "quickstart", [
+      M("Node or TypeScript example", "quickstart/typescript"),
       M("Go example", "quickstart/go"),
-      M("Node/TypeScript example", "quickstart/typescript"),
       M("Rust example", "quickstart/rust"),
-      M("Svelte example", "quickstart/svelte"),
       M("Java example", "quickstart/java"),
+      M("Svelte example", "quickstart/svelte"),
     ]),
     M("Getting Started", "getting-started"),
     M("Configure", "configure", [
@@ -40,7 +41,7 @@
     ]),
     M("Develop", "develop", [
       M("One workspace per task", "workspaces"),
-      M("Life of a workspace", "life-of-a-workspace"),
+      M("Life of a workspace", "life-of-workspace"),
       M("Contexts", "context-urls"),
       M("Collaboration & Sharing", "sharing-and-collaboration"),
       M("Command Line Interface", "command-line-interface"),
@@ -79,8 +80,8 @@
       // M("Custom Docker image", "references/gitpod-dockerfile"),
       // M("Architecture", "references/architecture"),
       // M("Troubleshooting", "references/troubleshooting"),
+      M("Changelog", "references/changelog"),
       M("Roadmap", "references/roadmap"),
-      // M("Changelog", "references/changelog"),
     ]),
   ];
   const MENU_v1 = [
