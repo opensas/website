@@ -14,8 +14,19 @@ jobs:
         id: waitFor200
         with:
           site_name: "gitpod-kumquat"
+          
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v7
+        with: 
+          urls: |
+            ${{ steps.waitFor200.outputs.url }}
+            ${{ steps.waitFor200.outputs.url }}/features
+            ${{ steps.waitFor200.outputs.url }}/pricing
+            ${{ steps.waitFor200.outputs.url }}/blog
+            ${{ steps.waitFor200.outputs.url }}/blog/devxconf-wrap
+            ${{ steps.waitFor200.outputs.url }}/docs
+            ${{ steps.waitFor200.outputs.url }}/docs/quickstart/svelte
+            ${{ steps.waitFor200.outputs.url }}/changelog
           budgetPath: ./budget.json
-      - name: Lighthouse CI
-        run: |
-          npm install -g @lhci/cli@0.7.x
-          lhci autorun --upload.target=temporary-public-storage --collect.url=${{ steps.waitFor200.outputs.url }} || echo "LHCI failed!"
+          uploadArtifacts: true
+          temporaryPublicStorage: true 
