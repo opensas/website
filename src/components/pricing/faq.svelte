@@ -1,5 +1,19 @@
 <script>
+  import { faqsKey } from "./faqs-container.svelte";
+  import { getContext } from "svelte";
+
   export let title;
+
+  const activeFaq = getContext(faqsKey);
+
+  const setActive = ({ target }) => {
+    const open = target.open;
+    if (open) $activeFaq = title;
+    // closing the faq that was active, no faq will remain open
+    if (isActive && !open) $activeFaq = null;
+  };
+
+  $: isActive = $activeFaq === title;
 </script>
 
 <style lang="scss">
@@ -86,7 +100,7 @@
   }
 </style>
 
-<details class="faq">
+<details class="faq" open={isActive} on:toggle={setActive}>
   <summary class="faq__top">
     <h3 class="h4 faq__title inline">{title}</h3>
     <img
