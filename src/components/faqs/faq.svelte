@@ -1,5 +1,5 @@
 <script>
-  import { faqsKey } from "./faqs-container.svelte";
+  import { faqsKey } from "./faqs.svelte";
   import { getContext } from "svelte";
 
   export let title;

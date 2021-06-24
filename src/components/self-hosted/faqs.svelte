@@ -1,7 +1,7 @@
 <script>
   import Section from "../section.svelte";
-  import FaqsContainer from "../pricing/faqs-container.svelte";
-  import Faq from "../pricing/faq.svelte";
+  import Faqs from "../faqs/faqs.svelte";
+  import Faq from "../faqs/faq.svelte";
 </script>
 
 <style lang="scss">
@@ -11,7 +11,7 @@
 </style>
 
 <Section>
-  <FaqsContainer>
+  <Faqs>
     <h2 class="h1">FAQs</h2>
     <Faq title="Can I create a team account?">
       <p>
@@ -77,5 +77,5 @@
         We are happy to answer them, please <a href="/contact">Get in Touch</a>.
       </p>
     </Faq>
-  </FaqsContainer>
+  </Faqs>
 </Section>
