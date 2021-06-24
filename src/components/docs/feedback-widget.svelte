@@ -10,6 +10,7 @@
     const response = await fetch("/.netlify/functions/feedback", {
       method: "post",
       body: JSON.stringify({
+        type: "docs",
         emotion: selectedEmotion,
         note,
         url: `https://${$page.host + $page.path}`,
@@ -29,7 +30,7 @@
   };
 </script>
 
-<style>
+<style type="text/postcss">
   .selected {
     @apply grayscale-0 scale-150;
   }
