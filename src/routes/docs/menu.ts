@@ -41,7 +41,6 @@ export const MENU: MenuEntry[] = [
     M("Contexts", "context-urls"),
     M("Collaboration & Sharing", "sharing-and-collaboration"),
     M("Create a team", "teams"),
-    M("Command Line Interface", "command-line-interface"),
     M("Local Companion", "develop/local-companion"),
   ]),
   M("Integrations", "integrations", [
@@ -75,6 +74,7 @@ export const MENU: MenuEntry[] = [
   ]),
   M("References", "references", [
     M(".gitpod.yml", "references/gitpod-yml"),
+    M("Command Line Interface", "command-line-interface"),
     // M("Custom Docker image", "references/gitpod-dockerfile"),
     // M("Architecture", "references/architecture"),
     // M("Troubleshooting", "references/troubleshooting"),
