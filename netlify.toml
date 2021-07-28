@@ -23,7 +23,12 @@
 
 [[redirects]]
   from = "/roadmap"
-  to = "https://www.notion.so/gitpod/Product-Roadmap-b9b5eac0a15147ac8d2dd25cf0519203"
+  to = "https://github.com/gitpod-io/roadmap"
+  status = 301
+
+[[redirects]]
+  from = "/docs/self-hosted/latest/self-hosted"
+  to = "/docs/self-hosted/latest"
   status = 301
 
 [[redirects]]
@@ -251,126 +256,6 @@
   to = "/docs/workspaces"
   status = 301
 
- [[redirects]]
-  from = "/docs/self-hosted/0.3.0/install/36_database"
-  to = "/docs/self-hosted/0.3.0/install/database"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/latest/install/36_database"
-  to = "/docs/self-hosted/latest/install/database"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/0.3.0/install/35_docker_registry"
-  to = "/docs/self-hosted/0.3.0/install/docker-registry"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/latest/install/35_docker_registry"
-  to = "/docs/self-hosted/latest/install/docker-registry"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/0.3.0/install/90_helm_2x"
-  to = "/docs/self-hosted/0.3.0/install/helm-2x"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/latest/install/90_helm_2x"
-  to = "/docs/self-hosted/latest/install/helm-2x"
-  status = 301
-
- [[redirects]]
-  from = "/docs/self-hosted/0.3.0/install/34_https_certs"
-  to = "/docs/self-hosted/0.3.0/install/https-certs"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/latest/install/34_https_certs"
-  to = "/docs/self-hosted/latest/install/https-certs"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/0.3.0/install/12_install_on_gcp_manual"
-  to = "/docs/self-hosted/0.3.0/install/install-on-gcp-manual"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/latest/install/12_install_on_gcp_manual"
-  to = "/docs/self-hosted/latest/install/install-on-gcp-manual"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/0.3.0/install/11_install_on_gcp_script"
-  to = "/docs/self-hosted/0.3.0/install/install-on-gcp-script"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/latest/install/11_install_on_gcp_script"
-  to = "/docs/self-hosted/latest/install/install-on-gcp-script"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/0.3.0/install/10_install_on_kubernetes"
-  to = "/docs/self-hosted/0.3.0/install/install-on-kubernetes"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/latest/install/10_install_on_kubernetes"
-  to = "/docs/self-hosted/latest/install/install-on-kubernetes"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/0.3.0/install/33_nodes"
-  to = "/docs/self-hosted/0.3.0/install/nodes"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/latest/install/33_nodes"
-  to = "/docs/self-hosted/latest/install/nodes"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/0.3.0/install/30_oauth"
-  to = "/docs/self-hosted/0.3.0/install/oauth"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/latest/install/30_oauth"
-  to = "/docs/self-hosted/latest/install/oauth"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/0.3.0/install/01_prepare_installation"
-  to = "/docs/self-hosted/0.3.0/install/prepare-installation"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/latest/install/01_prepare_installation"
-  to = "/docs/self-hosted/latest/install/prepare-installation"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/0.3.0/install/32_storage"
-  to = "/docs/self-hosted/0.3.0/install/storage"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/latest/install/32_storage"
-  to = "/docs/self-hosted/latest/install/storage"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/0.3.0/install/31_workspaces"
-  to = "/docs/self-hosted/0.3.0/install/workspaces"
-  status = 301
-
-[[redirects]]
-  from = "/docs/self-hosted/latest/install/31_workspaces"
-  to = "/docs/self-hosted/latest/install/workspaces"
-  status = 301
-
 [[redirects]]
   from = "/docs/bash-in-gitpod"
   to = "/docs/languages/bash"
@@ -444,6 +329,11 @@
 [[redirects]]
   from = "/gitpod-vs-codespaces"
   to = "/gitpod-vs-github-codespaces"
+  status = 301
+
+[[redirects]]
+  from = "/education"
+  to = "/pricing#do-you-offer-discounts-for-students-and-educational-institutions?"
   status = 301
 
 [[redirects]]

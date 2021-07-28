@@ -8,12 +8,12 @@
 <script lang="ts">
   import type { Changelog } from "../../types/changelog.type";
   import OpenGraph from "../../components/open-graph.svelte";
-  import "../../assets/docs.scss";
+  import "../../assets/markdown-commons.scss";
 
   export let changelogEntries: Changelog[];
 </script>
 
-<style>
+<style type="text/postcss">
   .content-docs :global(a) {
     @apply font-normal;
   }
@@ -52,6 +52,11 @@
       <a
         href="https://www.twitter.com/gitpod"
         rel="noopener"
+        on:click={() =>
+          window.analytics.track("social_opened", {
+            context: "changelog",
+            platform: "twitter",
+          })}
         class="btn-primary">Follow us on Twitter</a
       >
     </p>

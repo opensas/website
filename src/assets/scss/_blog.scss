@@ -1,3 +1,7 @@
+.post .headerImage {
+  max-height: 540px;
+}
+
 .post .headerImage,
 .post p > img {
   border-radius: 1rem 1.3rem 0 0;
@@ -16,6 +20,7 @@
 .post .share,
 .post .share ul {
   display: flex;
+  align-items: center;
   list-style-type: none;
 }
 .post .share li,

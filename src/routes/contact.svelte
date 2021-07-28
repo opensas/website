@@ -15,11 +15,16 @@
       btnHref: "https://community.gitpod.io",
       btnText: "Open community",
       description:
-        "If you are looking for help for common requests pease visit our community.",
+        "If you are looking for help for common requests please visit our community.",
       title: "Ask the community",
       image: "icon-enter.svg",
       imgHeight: "154",
       imgWidth: "147",
+      tracking: () =>
+        window.analytics.track("social_opened", {
+          context: "body",
+          name: "discourse",
+        }),
     },
     {
       btnHref: "/docs/professional-open-source#who-is-eligible",
@@ -92,6 +97,15 @@
       return;
     }
 
+    window.analytics.identify({
+      name_untrusted: formData.name.value,
+      email_untrusted: formData.email.value,
+    });
+
+    window.analytics.track("message_submitted", {
+      subject: formData.selectedSubject.value,
+    });
+
     const email: Email = {
       from: {
         email: formData.email.value,
@@ -143,22 +157,22 @@
 
 <OpenGraph
   data={{
-    description: "Reach out if you have any questions regarding Gitpod.",
+    description: "Contact us if you have any questions regarding Gitpod.",
     title: "Contact us",
   }}
 />
 <header class="tight">
   <h1>Contact us</h1>
-  <p>Please reach out if you have any questions regarding Gitpod.</p>
+  <p>Please let us know if you have any questions regarding Gitpod.</p>
 </header>
 
-<div class="cards double mx-8">
+<div class="cards double sm:mx-8">
   {#each contactCards as contactCard}
     <Card {contactCard} />
   {/each}
 </div>
 
-<section class="card shadow-xl mb-32 mx-8" bind:this={sectionStart}>
+<section class="card shadow-xl mb-32 sm:mx-8" bind:this={sectionStart}>
   {#if isEmailSent}
     <SubmissionSuccess
       title="Thank you for your message"

@@ -4,7 +4,12 @@
   export let contactCard: ContactCard;
 </script>
 
-<style>
+<style lang="scss">
+  .card {
+    @media (max-width: 375px) {
+      @apply px-micro;
+    }
+  }
   p {
     color: var(--dark-grey);
   }
@@ -20,7 +25,11 @@
   />
   <h2 class="h3">{contactCard.title}</h2>
   <p>{contactCard.description}</p>
-  <a href={contactCard.btnHref} class="btn btn-conversion m-8"
-    >{contactCard.btnText}</a
+  <a
+    href={contactCard.btnHref}
+    on:click={() => {
+      if (contactCard.tracking) contactCard.tracking();
+    }}
+    class="btn btn-conversion m-8">{contactCard.btnText}</a
   >
 </div>

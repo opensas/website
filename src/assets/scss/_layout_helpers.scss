@@ -73,6 +73,10 @@ header.tight.tight {
   margin-bottom: var(--not-huge);
 }
 
+main > header + section {
+  @apply mt-0 !important;
+}
+
 /* CARDS */
 .halfimages {
   /* cards have the margin */
@@ -88,6 +92,10 @@ header.tight.tight {
 
   & > * {
     margin: 0 1rem 2rem;
+
+    @media (max-width: 768px) {
+      margin: 0 0 2rem;
+    }
   }
 }
 .cards img {

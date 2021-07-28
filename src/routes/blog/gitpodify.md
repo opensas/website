@@ -23,11 +23,15 @@ What if there was a better way to do this? Maybe one day we can all just forget 
 
 <br>
 
+<div class="table-container">
+
 | <div style="width:120px">&nbsp;</div>     | The idea in brief                                                                                                                                                                                                                                        |
 | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | &nbsp;&nbsp;<strong>The problem</strong>  | Figuring out which dependencies, tools, and language versions to install to properly configure a dev environment takes a lot of time and energy, and has to be repeated from scratch every time you use a different computer, and for every new project. |
 | &nbsp;&nbsp;<strong>The cause</strong>    | Most setup instructions are written in a format that is not executable or reproducible, like plain text in markdown files.                                                                                                                               |
 | &nbsp;&nbsp;<strong>The solution</strong> | To solve this problem for every developer of your project, setup instructions should be written in a format that is executable, like scripts and Dockerfiles, and ideally versioned and shipped with your code. Gitpod was invented to make this easy.   |
+
+</div>
 
 ## Introducing Gitpod
 
@@ -59,13 +63,23 @@ Do you wish Gitpod would do more for your project? Then please read on. 👇
 
 ## Table of contents
 
+- [Introducing Gitpod](#introducing-gitpod)
+- [Table of contents](#table-of-contents)
 - [Running init scripts](#running-init-scripts)
 - [Accelerating startup with prebuilt workspaces](#accelerating-startup-with-prebuilt-workspaces)
 - [Installing missing packages](#installing-missing-packages)
 - [Installing databases](#installing-databases)
+  - [PostgreSQL](#postgresql)
+  - [MySQL](#mysql)
+  - [Redis](#redis)
+  - [MongoDB](#mongodb)
 - [Getting a Virtual Desktop](#getting-a-virtual-desktop)
 - [Opening previews](#opening-previews)
 - [Solving common preview problems](#solving-common-preview-problems)
+  - [Invalid Host Header](#invalid-host-header)
+  - [CSP errors](#csp-errors)
+  - [Unreachable localhost URLs](#unreachable-localhost-urls)
+  - [No usable sandbox](#no-usable-sandbox)
 - [Setting env variables](#setting-env-variables)
 
 ## Running init scripts
@@ -158,7 +172,7 @@ image:
 
 Then add a new file called `.gitpod.dockerfile` at the root of your repository, containing:
 
-```Dockerfile
+```dockerfile
 FROM gitpod/workspace-full
 
 RUN sudo apt-get update \
@@ -173,7 +187,7 @@ From now on, every new Gitpod workspace that will be opened for your repository 
 
 ## Installing databases
 
-Many projects need a database to work properly. Here is how to install the most common databases in Gitpod — take your pick! (If yours is missing please [reach out](https://twitter.com/gitpod), we'd love to help you.)
+Many projects need a database to work properly. Here is how to install the most common databases in Gitpod — take your pick! (If yours is missing please [let us know](https://twitter.com/gitpod), we'd love to help you.)
 
 ### PostgreSQL
 
@@ -181,7 +195,7 @@ To get PostgreSQL for your project, you can use our dedicated [PostgreSQL image]
 
 Simply base your `.gitpod.dockerfile` on:
 
-```Dockerfile
+```dockerfile
 FROM gitpod/workspace-postgres
 ```
 
@@ -207,7 +221,7 @@ postgres=#
 
 If your project needs MySQL to work, we also have a dedicated [MySQL image](https://github.com/gitpod-io/workspace-images/blob/master/mysql/Dockerfile). Simply base your `.gitpod.dockerfile` on:
 
-```Dockerfile
+```dockerfile
 FROM gitpod/workspace-mysql
 ```
 
@@ -223,7 +237,7 @@ mysql -e "show databases;"
 
 To install Redis for your project, simply add these instructions to your `.gitpod.dockerfile`:
 
-```Dockerfile
+```dockerfile
 FROM gitpod/workspace-full
 
 # Install Redis.
@@ -247,7 +261,7 @@ To get MongoDB for your project, you can use our dedicated [MongoDB image](https
 
 Simply base your `.gitpod.dockerfile` on:
 
-```Dockerfile
+```dockerfile
 FROM gitpod/workspace-mongodb
 ```
 
@@ -273,7 +287,7 @@ That's because by default, Gitpod workspaces don't have a graphical environment 
 
 Simply base your `.gitpod.dockerfile` on:
 
-```Dockerfile
+```dockerfile
 FROM gitpod/workspace-full-vnc
 ```
 
@@ -285,7 +299,7 @@ This will give you a virtual X server and a Remote Desktop client running on por
 
 This can be useful for example to run Electron apps graphically. For that, you'll just need a few extra dependencies in your `.gitpod.dockerfile`:
 
-```Dockerfile
+```dockerfile
 FROM gitpod/workspace-full-vnc
 
 # Install Electron dependencies.
@@ -417,7 +431,7 @@ These mean that your web app refuses to be opened inside an `<iframe>`, for secu
 
 If your web app starts to show up in a preview, but it doesn't work well, the Browser Console might reveal failing requests to `localhost` URLs like:
 
-```
+```bash
 http://localhost:9000/api/v1/
 ```
 
@@ -513,4 +527,4 @@ For a complete example of a project that requires env variables (saved in `.yml`
 
 <br>
 
-Phew... that's about it! I hope you enjoyed reading through this guide and that it helped you in some way. If you still have questions or suggestions, please [reach out](https://twitter.com/jankeromnes). I'd love to help you and make this guide more useful.
+Phew... that's about it! I hope you enjoyed reading through this guide and that it helped you in some way. If you still have questions or suggestions, please [let us know](https://twitter.com/jankeromnes). I'd love to help you and make this guide more useful.

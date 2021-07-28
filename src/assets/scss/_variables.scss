@@ -26,6 +26,7 @@
   --brand-gradient: linear-gradient(137.41deg, #ffad33 14.37%, #ff8a00 91.32%);
 
   --shadow: 0 0.625rem 1.5rem 0rem rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.1);
   --shadow-light: 0 1px 1px rgba(0, 0, 0, 0.1);
   --shadow-brand: 0 0.625rem 1.5rem var(--brand-hover);
 
@@ -38,6 +39,7 @@
   --p-large: 1.5rem;
   --p-medium: 1.125rem;
   --p-small: 1rem;
+  --p-footer: 0.938rem;
   --p-xsmall: 0.8125rem;
   --btn-small: 0.875rem;
   --fine-print: 0.75rem;

@@ -36,7 +36,7 @@ GitLab’s credo “Everyone can contribute” is a perfect fit for Gitpod becau
 
 GitLab’s engineers have worked on lowering the barrier to contributions on GitLab itself through a comprehensive [contribution guide](https://about.gitlab.com/community/contribute/) and even a [GitLab Development Kit (GDK)](https://gitlab.com/gitlab-org/gitlab-development-kit) that sets up your dev environment on your machine. But still, running the GDK installer takes at least 30 minutes to download and install dependencies, clone the GitLab repository, and start all services you need like the database, a webserver, etc.
 
-We are currently helping the GitLab team [to build a fully-automated Gitpod configuration for the GitLab source code](https://gitlab.com/gitlab-org/gitlab/-/merge_requests/43103). This makes contributing to the GitLab source code itself as easy as clicking a button. Instead of waiting half an hour for a bunch of libs and tools to get installed, with Gitpod you are productive within just a few minutes. Once this configuration is merged, you will be able to just click on the Gitpod button of the [GitLab repository](https://gitlab.com/gitlab-org/gitlab), and everything will be set up for your first GitLab contribution.
+We are currently helping the GitLab team <a class="no-nowrap" href="https://gitlab.com/gitlab-org/gitlab/-/merge_requests/43103">to build a fully-automated Gitpod configuration for the GitLab source code</a>. This makes contributing to the GitLab source code itself as easy as clicking a button. Instead of waiting half an hour for a bunch of libs and tools to get installed, with Gitpod you are productive within just a few minutes. Once this configuration is merged, you will be able to just click on the Gitpod button of the [GitLab repository](https://gitlab.com/gitlab-org/gitlab), and everything will be set up for your first GitLab contribution.
 
 [![GitLab integration quote](../../../static/images/blog/gitlab-integration/gitlab-integration-quote.png)](https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1076#note_419638250)
 
@@ -44,7 +44,7 @@ We are currently helping the GitLab team [to build a fully-automated Gitpod conf
 
 The Gitpod integration is already live on gitlab.com today and is going to be part of [GitLab&nbsp;13.5](https://gitlab.com/gitlab-com/www-gitlab-com/-/merge_requests/61933) which is released on October 22nd. At that point, you’ll be able to connect your GitLab self-managed installation to gitpod.io, through a new feature that lets you register additional Git providers.
 
-Furthermore, you can [self-host Gitpod](https://www.gitpod.io/self-hosted/) (which is [open source](https://github.com/gitpod-io/gitpod)) on your own Kubernetes cluster and configure it with your GitLab instance. We have convenient installation scripts for GCP and AWS.
+Furthermore, you can [self-host Gitpod](https://www.gitpod.io/self-hosted) (which is [open source](https://github.com/gitpod-io/gitpod)) on your own Kubernetes cluster and configure it with your GitLab instance. We have convenient installation scripts for GCP and AWS.
 
 <h2 class="h1">What’s next?</h2>
 

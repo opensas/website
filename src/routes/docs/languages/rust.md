@@ -1,5 +1,5 @@
 ---
-section: languages-and-frameworks
+section: references
 title: Rust in Gitpod
 ---
 
@@ -18,7 +18,7 @@ Rust is a first-class language in Gitpod, and we believe that Gitpod is a great 
 
 ## Rust Version
 
-Gitpod always comes with the latest available Rust toolchain pre-installed using [rustup](https://rustup.rs/). (As of this writing, the Rust version is `1.52.1` and it's updated [semi-automatically](https://github.com/gitpod-io/workspace-images/pull/282/files) on every official Rust release.)
+Gitpod always comes with the latest available Rust toolchain pre-installed using [rustup](https://rustup.rs/). (As of this writing, the Rust version is `1.53.0` and it's updated [semi-automatically](https://github.com/gitpod-io/workspace-images/pull/282/files) on every official Rust release.)
 
 You can also use `rustup` yourself in Gitpod in order to switch to a different Rust version, or to install extra components. See the [the rustup book](https://rust-lang.github.io/rustup/index.html) to learn more about `rustup` itself.
 
@@ -30,7 +30,7 @@ Note: If you try to use `rustup` in your repository's [.gitpod.Dockerfile](/docs
 
 To fix this, simply wrap the `rustup` command in a login Bash shell, like so:
 
-```Dockerfile
+```dockerfile
 RUN bash -cl "rustup toolchain install nightly"
 ```
 
@@ -109,7 +109,7 @@ The next prerequisite is a Docker configuration.
 
 If you already have a [.gitpod.Dockerfile](/docs/config-docker) just add the following:
 
-```Dockerfile
+```dockerfile
 RUN sudo apt-get -q update \
     && sudo apt-get install -yq \
         libpython3.6 \
@@ -121,7 +121,7 @@ ENV RUST_LLDB=/usr/bin/lldb-8
 
 If not there are two steps. First, create a file called `.gitpod.Dockerfile` with the following content:
 
-```Dockerfile
+```dockerfile
 FROM gitpod/workspace-full
 
 USER gitpod

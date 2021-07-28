@@ -3,8 +3,8 @@
 </script>
 
 <script lang="ts">
-  import type { Email } from "../functions/submit-form";
   import type { Form } from "../types/form.type";
+  import OpenGraph from "../components/open-graph.svelte";
 
   const extensionUrls = {
     chrome:
@@ -41,7 +41,7 @@
     },
   };
   let isFormDirty = false;
-  let isEmailSent = false;
+  let isFeedbackSent = false;
 
   $: isFormValid = Object.values(formData).every((field) => field.valid);
 
@@ -51,27 +51,23 @@
       return;
     }
 
-    const email: Email = {
-      from: {
-        email: "contact+browserextension@gitpod.io",
-        name: "Contact - Browser Extension Uninstall",
-      },
-      subject: "Why did I uninstall the browser extension?",
-      feedback: formData.reason.selected.reduce(
-        (result, reason) =>
-          `${reasons.find(({ id }) => id === reason).label}\n${result}`,
-        ``
-      ),
-      otherFeedback: formData.otherFeedback.value,
-    };
-
     try {
-      const response = await fetch("/.netlify/functions/submit-form", {
-        method: "POST",
-        body: JSON.stringify(email),
+      const response = await fetch("/.netlify/functions/feedback", {
+        method: "post",
+        body: JSON.stringify({
+          type: "browser-extension",
+          browser: currentBrowser,
+          feedback: formData.reason.selected.reduce(
+            (result, reason) =>
+              `${reasons.find(({ id }) => id === reason).label}\n${result}`,
+            ``
+          ),
+          note: formData.otherFeedback.value,
+        }),
       });
-      if (response.ok) {
-        isEmailSent = true;
+
+      if (response.status === 201) {
+        isFeedbackSent = true;
       } else {
         console.error(response.statusText);
       }
@@ -81,20 +77,23 @@
   };
 </script>
 
-<style>
-  .letter {
-    display: flex;
-    place-content: center center;
-    padding: 3em;
-    order: -1;
+<style type="text/postcss">
+  header {
+    @apply mb-0 !important;
   }
-  .letter p {
-    padding: 2rem;
-    background-color: var(--white);
-    border: 1px solid var(--divider);
-    max-width: 20rem;
+
+  form li {
+    @apply mb-0;
   }
 </style>
+
+<OpenGraph
+  data={{
+    description: "The browser extension has been uninstalled.",
+    title: "Extension Uninstall",
+    norobots: true,
+  }}
+/>
 
 <header>
   {#if extensionUrl}
@@ -103,78 +102,81 @@
   {/if}
   <h1>How Can We Improve?</h1>
 </header>
-<section class=" halfimages">
-  <article class="card">
-    <div class="letter">
-      <p>
-        Hi there, Sad to see you leave 😕 To improve and make sure that other
-        developers are happier with Gitpod, we’d love to get your opinion on why
-        you decided to uninstall your browser extension. We will work hard to
-        build a product that (hopefully) convinces you to use Gitpod again at a
-        later point ✌️
-      </p>
-    </div>
-    <form
-      on:submit|preventDefault={handleSubmit}
-      name="Extension Deletion"
-      novalidate
-    >
-      <input type="hidden" name="form-name" value="extension-deletion" />
-      <p class="h5">Why did you uninstall the browser extension?</p>
-      <ul>
-        <li class:error={isFormDirty && !formData.reason.valid}>
-          <fieldset>
-            <legend>Check all that apply:</legend>
-            <ul>
-              {#each reasons as { id, label }}
-                <li>
-                  <input
-                    type="checkbox"
-                    name="reason"
-                    value={id}
-                    {id}
-                    data-text={label}
-                    bind:group={formData.reason.selected}
-                    bind:this={formData.reason.el}
-                    on:change={() => {
-                      formData.reason.valid =
-                        formData.reason.selected.length > 0 &&
-                        formData.reason.el.validity.valid;
-                    }}
-                  />
-                  <label for={id}>{label}</label>
-                </li>
-              {/each}
-            </ul>
-          </fieldset>
-        </li>
-        <li class:error={isFormDirty && !formData.otherFeedback.valid}>
-          <label for="otherFeedback">Do you have any other feedback?</label>
-          <textarea
-            aria-label="Do you have any other feedback?"
-            id="otherFeedback"
-            name="otherFeedback"
-            bind:value={formData.otherFeedback.value}
-            bind:this={formData.otherFeedback.el}
-            on:change={() => {
-              formData.otherFeedback.valid =
-                formData.otherFeedback.value === ""
-                  ? true
-                  : formData.otherFeedback.el.validity.valid;
-            }}
-          />
-        </li>
-        <li>
-          <button
-            class="btn-conversion"
-            disabled={isFormDirty && !isFormValid}
-            type="submit">Send</button
-          >
-        </li>
-      </ul>
-      {#if isEmailSent}
-        <p>Thanks for your Feedback</p>
-      {/if}
-    </form>
-  </article>
+<section
+  class="card card shadow-xl mb-32 sm:mx-8 lg:flex lg:items-center lg:justify-around"
+>
+  <div class="letter lg:w-2/5 lgpr-xx-small mb-small">
+    <p class="text-large">
+      Hi there, Sad to see you leave 😕 To improve and make sure that other
+      developers are happier with Gitpod, we’d love to get your opinion on why
+      you decided to uninstall your browser extension. We will work hard to
+      build a product that (hopefully) convinces you to use Gitpod again at a
+      later point ✌️
+    </p>
+  </div>
+  <form
+    on:submit|preventDefault={handleSubmit}
+    name="Extension Deletion"
+    novalidate
+    class="lg:w-2/5"
+  >
+    <input type="hidden" name="form-name" value="extension-deletion" />
+    <h2 class="h3">Why did you uninstall the browser extension?</h2>
+    <ul>
+      <li class:error={isFormDirty && !formData.reason.valid}>
+        <fieldset>
+          <legend>Check all that apply:</legend>
+          <ul class="my-macro">
+            {#each reasons as { id, label }}
+              <li>
+                <input
+                  type="checkbox"
+                  name="reason"
+                  value={id}
+                  {id}
+                  data-text={label}
+                  bind:group={formData.reason.selected}
+                  bind:this={formData.reason.el}
+                  on:change={() => {
+                    formData.reason.valid =
+                      formData.reason.selected.length > 0 &&
+                      formData.reason.el.validity.valid;
+                  }}
+                />
+                <label for={id}>{label}</label>
+              </li>
+            {/each}
+          </ul>
+        </fieldset>
+      </li>
+      <li class:error={isFormDirty && !formData.otherFeedback.valid}>
+        <textarea
+          aria-label="Do you have any other feedback?"
+          placeholder="Do you have any other feedback?"
+          id="otherFeedback"
+          name="otherFeedback"
+          bind:value={formData.otherFeedback.value}
+          bind:this={formData.otherFeedback.el}
+          cols="20"
+          rows="4"
+          on:change={() => {
+            formData.otherFeedback.valid =
+              formData.otherFeedback.value === ""
+                ? true
+                : formData.otherFeedback.el.validity.valid;
+          }}
+        />
+      </li>
+      <li>
+        <button
+          class="btn-cta mt-x-small"
+          disabled={(isFormDirty && !isFormValid) || isFeedbackSent}
+          type="submit">Send</button
+        >
+      </li>
+    </ul>
+    {#if isFeedbackSent}
+      <p>Thanks for your Feedback</p>
+    {/if}
+  </form>
 </section>

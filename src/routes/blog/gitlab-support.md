@@ -27,19 +27,19 @@ Besides the standard project URL, Gitpod supports
 
 - opening file URLs
 
-  <p style="font-size: 70%;">Example: <a href="https://gitpod.io/#https://gitlab.com/gitpod/spring-petclinic/blob/master/src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java" target="blank"><b style="font-weight:700;">https://gitpod.io/#</b>https://gitlab.com/gitpod/spring-petclinic/.../petclinic/PetClinicApplication.java</a></p>
+  <p>Example: <a href="https://gitpod.io/#https://gitlab.com/gitpod/spring-petclinic/blob/master/src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java" target="blank"><b style="font-weight:700;">https://gitpod.io/#</b>https://gitlab.com/gitpod/spring-petclinic/.../petclinic/PetClinicApplication.java</a></p>
 
 - opening branches
 
-  <p style="font-size: 70%;">Example: <a href="https://gitpod.io/#https://gitlab.com/gitpod/spring-petclinic/tree/my-branch" target="blank"><b style="font-weight:700;">https://gitpod.io/#</b>https://gitlab.com/gitpod/spring-petclinic/tree/my-branch</a></p>
+  <p>Example: <a href="https://gitpod.io/#https://gitlab.com/gitpod/spring-petclinic/tree/my-branch" target="blank"><b style="font-weight:700;">https://gitpod.io/#</b>https://gitlab.com/gitpod/spring-petclinic/tree/my-branch</a></p>
 
 - opening issues
 
-  <p style="font-size: 70%;">Example: <a href="https://gitpod.io/#https://gitlab.com/gitpod/spring-petclinic/issues/1" target="blank"><b style="font-weight:700;">https://gitpod.io/#</b>https://gitlab.com/gitpod/spring-petclinic/issues/1</a></p>
+  <p>Example: <a href="https://gitpod.io/#https://gitlab.com/gitpod/spring-petclinic/issues/1" target="blank"><b style="font-weight:700;">https://gitpod.io/#</b>https://gitlab.com/gitpod/spring-petclinic/issues/1</a></p>
 
 - opening merge requests
 
-  <p style="font-size: 70%;">Example: <a href="https://gitpod.io/#https://gitlab.com/gitpod/spring-petclinic/merge_requests/1" target="blank"><b style="font-weight:700;">https://gitpod.io/#</b>https://gitlab.com/gitpod/spring-petclinic/merge_requests/1</a></p>
+  <p>Example: <a href="https://gitpod.io/#https://gitlab.com/gitpod/spring-petclinic/merge_requests/1" target="blank"><b style="font-weight:700;">https://gitpod.io/#</b>https://gitlab.com/gitpod/spring-petclinic/merge_requests/1</a></p>
 
 Depending on the context, your dev environment will be initialized differently.
 
@@ -68,7 +68,7 @@ Enabling prebuilds on your GitLab project is done by configuring a Webhook. But 
 
 ## We Need Your Feedback
 
-All important features in Gitpod go through a beta phase, so you get the chance to try it early and participate in further development of the feature. So, please [reach out](https://github.com/gitpod-io/gitpod/issues) with anything that bugs you or any ideas you have that could make your daily life with GitLab and Gitpod more seamless. <span aria-hidden="true">❤️</span>
+All important features in Gitpod go through a beta phase, so you get the chance to try it early and participate in further development of the feature. So, please [let us know](https://github.com/gitpod-io/gitpod/issues) with anything that bugs you or any ideas you have that could make your daily life with GitLab and Gitpod more seamless. <span aria-hidden="true">❤️</span>
 
 ## I run GitLab Self-Managed!
 
