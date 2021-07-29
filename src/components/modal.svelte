@@ -1,15 +1,16 @@
 <script lang="ts">
-  import { createEventDispatcher, tick } from "svelte";
+  import { showHideOverflowY } from "../utils/helper";
+
+  import { createEventDispatcher } from "svelte";
 
   export let isOpen = false;
 
   $: {
     if (typeof document !== "undefined") {
-      const html = document.querySelector("html");
       if (isOpen) {
-        html.style.overflowY = "hidden";
+        showHideOverflowY(true);
       } else {
-        html.style.overflowY = "initial";
+        showHideOverflowY(false);
       }
     }
   }
